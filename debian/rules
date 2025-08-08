@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-Wno-dev \
+        -DCONFIG=YOCTO \
+        -DTIM_VX_ENABLE_TEST=off \
+        -DTIM_VX_USE_EXTERNAL_OVXLIB=off \
+        -DCMAKE_INSTALL_PREFIX=/usr/ \
+        -DCMAKE_INSTALL_LIBDIR=lib/ \
+		$(NULL)
+
+override_dh_auto_install:
+	dh_auto_install
