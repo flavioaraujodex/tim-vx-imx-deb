@@ -20,6 +20,7 @@ jobs:
       run-attestation: true
       run-piuparts: false
       upload-artifacts: true
+      before-build-hook: "apt-mark hold libc-bin libc-dev-bin libc6 libc6-dev"
       extra-packages: ca-certificates
       extra-repos: |
         Types: deb
