@@ -16,7 +16,7 @@ jobs:
     with:
       arch: ${{ matrix.arch }}
       docker-image: debian:bookworm
-      package-name: nn-imx
+      package-name: tim-vx-imx
       run-attestation: true
       run-piuparts: false
       upload-artifacts: true
